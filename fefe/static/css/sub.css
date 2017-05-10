@@ -1,0 +1,27 @@
+div#photoZone {
+    width: 100%;
+    height: 200px;
+    padding-top: 54px;
+    box-sizing: content-box;
+}
+
+div#photoZone > div {
+    width: 100%;
+    height: 100%;
+    background: url("https://www.chf.or.kr/cm_data/editorImage/201403/20140303152606.gif") no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+div#content {
+    height: auto;
+    padding: 5px;
+}
+
+* {
+  font-family: 'Hanna', serif;
+}
+
+#nav{
+  padding-right: 30px;
+}

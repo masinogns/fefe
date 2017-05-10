@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+{% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/overlay.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/basic.css' %}">
+  </head>
+  <body>
+
+
+
+  <nav id="nav" class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <div class="container mx-0 mx-sm-auto">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'home'%}">한민족의 식</a>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="{% url 'food:index' %}">우리 먹거리 체험</a>
+              <a class="nav-item nav-link" href="{% url 'good:index' %}">우리 먹거리 인증 식당</a>
+              <a class="nav-item nav-link" href="{% url 'recipe:index' %}">우리 먹거리 레시피</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+<div class="swiper-container container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="row ">
+        <div class="write">
+          <h2>우리 고유의 옛 맛,</h2>
+          <h3>선조의 지혜와 정신을 <br>오래도록 보존하고 계승하며  </h3>
+          <h3>함께 나누는 이곳에서는 <br>누구나 한 민족입니다.</h3>
+
+        </div>
+
+        <div class="red">
+          <img src="https://cdn.pixabay.com/photo/2015/11/02/21/16/lynx-1019069__340.jpg" alt="">
+          <h2>hi!</h2>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="swiper-slide">
+      <div class="blue">
+
+        <h3>우리의 제공거리</h3>
+
+      </div>
+
+
+        <div class="image-over">
+          <a href="{% url 'food:index'%}">
+          <img src="https://cdn.pixabay.com/photo/2017/04/12/19/06/lighthouse-2225445__340.jpg" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">우리 먹거리 체험</div>
+          </div>
+          </a>
+        </div>
+
+        <div class="image-over">
+          <a href="{% url 'good:index'%}">
+          <img src="https://cdn.pixabay.com/photo/2017/04/07/18/23/landscape-2211587__340.jpg" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">우리 먹거리 인증 식당</div>
+          </div>
+          </a>
+        </div>
+
+        <div class="image-over">
+          <a href="{% url 'recipe:index' %}">
+          <img src="https://cdn.pixabay.com/photo/2017/04/07/21/22/wave-2211925__340.jpg" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">우리 먹거리 레시피</div>
+          </div>
+          </a>
+        </div>
+
+
+
+
+      </div>
+
+
+    <div class="swiper-slide">
+
+      <div class="row">
+        <div class="red">
+          <a href=""><img src="https://cdn.pixabay.com/photo/2017/04/12/19/06/lighthouse-2225445__340.jpg" alt=""></a>
+        </div>
+
+        <div class="write">
+          <h2>우리 먹거리 체험</h2>
+          <h3>ㅋㅋㅋㅋㅋㅋㅋㅋ</h3>
+          <h4>ㅑㅑㅑㅑㅑㅑㅑㅑ</h4>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-slide">
+
+
+
+      <div class="row">
+        <div class="red">
+            <img src="https://cdn.pixabay.com/photo/2017/04/07/18/23/landscape-2211587__340.jpg" alt="">
+        </div>
+
+        <div class="write">
+          <h2>우리 먹거리 인증 식당</h2>
+          <h3>ㅋㅋㅋㅋㅋㅋㅋㅋ</h3>
+          <h4>ㅑㅑㅑㅑㅑㅑㅑㅑ</h4>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-slide">
+
+
+
+      <div class="row">
+        <div class="red">
+            <img src="https://cdn.pixabay.com/photo/2017/04/07/21/22/wave-2211925__340.jpg" alt="">
+        </div>
+
+        <div class="write">
+          <h2>우리 먹거리 레시피</h2>
+          <h3>ㅋㅋㅋㅋㅋㅋㅋㅋ</h3>
+          <h4>ㅑㅑㅑㅑㅑㅑㅑㅑ</h4>
+        </div>
+      </div>
+
+</div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'vertical',
+            slidesPerView: 1,
+            paginationClickable: false,
+            spaceBetween: 0,
+            mousewheelControl: true,
+
+            // If we need pagination
+            pagination: '.swiper-pagination',
+
+            speed: 600,
+            initialSlide: 0,
+        });
+        </script>
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+      <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+{% block style %}{% static 'css/g_index.css'%}{% endblock style %}
+
+
+
+{%block content%}
+
+<div class="container">
+
+
+<div class="row">
+{% for object in objects %}
+
+<div class="col-sm-6 col-lg-6 mt-3">
+<div class="card">
+  <div class="card-block">
+    <h3 class="card-title">{{object}}</h3>
+
+    <a href="{% url 'good:list' object.pk %}" class="btn btn-primary">체험하러 가기</a>
+  </div>
+</div>
+</div>
+
+{%endfor%}
+</div>
+</div>
+
+
+
+{% endblock content%}

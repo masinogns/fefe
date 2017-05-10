@@ -1,0 +1,143 @@
+#content > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+  font-family: 'Hanna', serif;
+}
+
+#nav {
+  padding-right: 30px;
+}
+
+
+.intro {
+    position: absolute;
+    width: 57.143rem;
+    height: 19.5rem;
+    margin-left: -28.572rem;
+    margin-top: -9.75rem;
+    top: 50%;
+    left: 50%;
+}
+
+.intro > dl {
+    display: block;
+    width: 100%;
+}
+
+.intro > dl::after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;
+    visibility: hidden;
+}
+
+.intro > dl > dd {
+    float: left;
+    width: 50%;
+}
+
+dd.intro_img {
+    font-size: 0;
+    
+}
+
+dd.intro_content {
+    padding: 0 0 0 10px;
+    font-size: 2.3rem;
+    line-height: 1.8;
+    /*font-family: 'PT Sans', sans-serif;*/
+    font-family: 'Hanna', serif;
+
+}
+
+.menu_intro {
+    display: table;
+    width: 100%;
+
+}
+
+.menu_intro > dl {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.menu_intro > dl > dt {
+    font-size: 2.5rem;
+    /*font-size: 50px;*/
+    padding-left: 30px;
+    padding-bottom: 25px;
+    margin-top: -50px;
+    margin-bottom: 20px;
+}
+
+.menu_intro > dl > dd {
+    width: 100%;
+}
+
+.menu_intro > dl > dd > dl {
+    width: 100%;
+}
+
+.menu_intro > dl > dd > dl::after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;
+    visibility: hidden;
+}
+
+.menu_intro > dl > dd > dl > dd.btn_menu_1 {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/testfirebase-85fba.appspot.com/o/food.jpg?alt=media&token=c07fa84b-8d8c-4eb4-9f46-c75797468581");
+}
+
+.menu_intro > dl > dd > dl > dd.btn_menu_2 {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/testfirebase-85fba.appspot.com/o/home.jpg?alt=media&token=493c0336-82e1-4e30-9c45-d7aaad1dc9f0");
+}
+
+.menu_intro > dl > dd > dl > dd.btn_menu_3 {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/testfirebase-85fba.appspot.com/o/recipe.jpg?alt=media&token=0239235f-396d-4679-99b2-9e0ca001d89c");
+}
+
+.menu_intro > dl > dd > dl > dd {
+    float: left;
+    width: 33.3333%;
+    height: 18.929rem;
+    background-position: center center;
+    background-size: cover;
+}
+
+.menu_intro > dl > dd > dl > dd > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 1.143rem;
+    font-weight: bold;
+    color: #FFF;
+    /*line-height: 18.929rem;*/
+    text-align: center;
+    /*background: rgba(0, 140, 186, 0.8);*/
+    background: rgba(219, 141, 25, 0.6);
+    opacity: 0;
+}
+
+.menu_intro > dl > dd > dl > dd > a:hover {
+    opacity: 1;
+}
+
+.menu1 > dd {
+  font-size: 2.1rem;
+  /*line-height: 350%;*/
+  padding-top: 10px;
+}
+
+.menu1 > dd.sub2 {
+  font-size: 1.6rem;
+  padding-top: 40px;
+  font-family: 'Jeju Gothic', serif;
+}

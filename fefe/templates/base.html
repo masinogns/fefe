@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sub.css'%}">
+
+    <link rel="stylesheet" href="{% block style %}{% endblock %}">
+<link rel="stylesheet" href="{% block style1 %}{% endblock %}">
+
+<script src="{% static 'bxslider/jquery.bxslider.min.js'%}"></script>
+<link rel="stylesheet" href="{% static 'bxslider/jquery.bxslider.css'%}">
+
+<script src="{%block scr%}{%endblock%}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+
+  <div id="header">
+      <div class="logo_black">
+          <a href="/">
+              <img src="{% static 'images/logo.png' %}" alt="Logo">
+          </a>
+      </div>
+
+      <div id="nav">
+          <dl>
+              <dd>
+                  <a href="{% url 'food:index'%}">
+                      뜨끈뜨끈 한식당
+                  </a>
+              </dd>
+              <dd>
+                  <a href="{% url 'good:index'%}">
+                      우리끼리 전원일기
+                  </a>
+              </dd>
+              <dd>
+                  <a href="{% url 'recipe:index' %}">
+                      한식도전기
+                  </a>
+              </dd>
+          </dl>
+      </div>
+  </div>
+
+  
+<div id="photoZone">
+    <div></div>
+</div>
+
+
+{% block content %}{% endblock %}
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

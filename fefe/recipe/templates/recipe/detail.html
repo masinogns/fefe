@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% load staticfiles%}
+{% block style %}{% static 'css/re_detail.css'%}{% endblock style %}
+
+{%block content%}
+<style media="screen">
+
+</style>
+
+<div class="container mt-5">
+  {% for object in object%}
+  <h2>{{object.recipe_nm_ko}}</h2>
+  <br>
+  <h3>요리 정보</h3>
+  <div class="classification">
+    <span>요리 분류 : {{object.ty_nm}}</span>
+    <span>요리 시간 : {{object.cooking_time}}</span>
+    <span>요리 칼로리 : {{object.calories}}</span>
+    <span>요리 난이도 : {{object.level_nm}}</span>
+  </div>
+  {% endfor %}
+</div>
+
+<section class="container mt-3">
+<h3>요리 재료</h3>
+<div class="recipe_source mt-3">
+  <span>주재료 : </span>
+{% for object in source %}
+  {% if object.irdnt_ty_nm == "주재료" %}
+  <span>{{object.irdnt_nm}}</span>
+  <span>{{object.irdnt_cpcty}}</span>
+  {%endif%}
+{% endfor %}
+  </div>
+
+  <div class="recipe_source mt-1">
+    <span>부재료 : </span>
+{% for object in source %}
+  {% if object.irdnt_ty_nm == "부재료" %}
+  <span>{{object.irdnt_nm}}</span>
+  <span>{{object.irdnt_cpcty}}</span>
+  {%endif%}
+{% endfor %}
+  </div>
+
+  <div class="recipe_source mt-1">
+    <span>양념 : </span>
+  {% for object in source %}
+  {% if object.irdnt_ty_nm == "양념" %}
+  <span>{{object.irdnt_nm}}</span>
+  <span>{{object.irdnt_cpcty}}</span>
+  {%endif%}
+  {% endfor %}
+  </div>
+
+</section>
+
+
+  <div class="container mt-5">
+
+  <h3>요리 과정</h3>
+
+  <div class="discription">
+  {% for object in order%}
+  <img class="image" src="{{object.stre_step_image_url}}" alt="해당하는 과정의 사진이 없음.">
+  <p class="write">
+    <span>{{object}}. {{object.cooking_dc}}</span>
+  </p>
+  {% endfor %}
+  </div>
+  </div>
+
+
+
+
+
+{% include "comments.html" %}
+
+
+
+{%endblock content%}

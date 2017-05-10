@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+
+{% load staticfiles %}
+{% block style %}{% static 'css/re_index.css'%}{% endblock style %}
+
+{%block content%}
+
+
+<!-- {%for object in objects %}
+
+<div class="container mt-3">
+
+  <a href="{% url 'recipe:list' object.0%}"><button type="button" class="btn btn-primary btn-lg btn-block">{{object.1}}</button></a>
+
+</div>
+  {%endfor%} -->
+
+  <div class="container mt-3">
+    <div class="row">
+
+
+    {%for object in objects%}
+    <div class="col-sm-12 col-lg-3 mt-1">
+      <a href="{% url 'recipe:list' object.0 %}" class="card-link">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">{{object.1}}</h4>
+          <!-- <h6 class="card-subtitle mb-2 text-muted">{{object}}</h6> -->
+        </div>
+      </div>
+    </a>
+    </div>
+    {%endfor%}
+
+
+
+    </div>
+  </div>
+
+
+
+
+{%endblock content%}

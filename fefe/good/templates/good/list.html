@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% block style %}{% static 'css/list.css'%}{% endblock style %}
+
+{%block content%}
+
+<div class="container ttt" style="font-size:20px; padding-top:20px;">
+  <p>{{index.area}}</p>
+  <p>{{index.description}}</p>
+</div>
+
+
+<div class="container">
+<div class="row">
+{% for object in objects %}
+
+<div class="col-sm-6 col-lg-3 mt-3">
+<div class="card">
+  <div class="card-block">
+    <h3 class="card-title">{{object}}</h3>
+    <a href="{% url 'good:detail' object.pk %}" class="btn btn-primary">식당 구경가기</a>
+  </div>
+</div>
+</div>
+
+{%endfor%}
+</div>
+
+
+
+
+
+
+  {% if objects.has_other_pages %}
+    <ul class="pagination mt-5">
+      {% if objects.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ objects.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+      {% endif %}
+      {% for i in objects.paginator.page_range %}
+        {% if objects.number == i %}
+          <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if objects.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ objects.next_page_number }}">&raquo;</a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+
+</div>
+
+{%endblock content%}

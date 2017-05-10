@@ -1,0 +1,32 @@
+
+.btn{
+  float: right;
+}
+
+div.card{
+  background-color: #D0D3BE;
+}
+
+div.card-block > h5{
+  font-size: 35px;
+  color: rgb(255, 255, 255);
+}
+
+div.card-block > h6 {
+  color: rgb(255, 255, 255);
+}
+
+
+div.card-block > a {
+  float: right;
+  background-color: rgb(207, 210, 189);
+  border-color: #fff;
+  color: rgb(255, 255, 255);
+  border-color: black;
+}
+
+
+div.card-block > a:hover {
+  background: rgb(190, 203, 118);
+  border-color: rgb(6, 6, 6);
+}

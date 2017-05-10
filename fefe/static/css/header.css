@@ -1,0 +1,44 @@
+#header {
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    padding: 3px 10px;
+    border-bottom: 2px solid rgba(59, 59, 59, 0.4);
+    background: RGBA(247, 247, 247, 0.6);
+    z-index: 10000;
+}
+
+#header > div.logo_black {
+    float: left;
+    font-size:0;
+}
+
+#header > div#nav {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#header > div#nav > dl {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+}
+
+#header > div#nav > dl > dd {
+    display: inline-block;
+    height: 100%;
+    margin-right: 10px;
+    font-size: 1.143rem;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+#header > div#nav > dl > dd > a {
+    color: rgba(0, 0, 0, .5);
+}
+
+#header > div#nav > dl > dd > a:hover {
+    color: #000;
+}

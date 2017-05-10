@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load staticfiles%}
+{% block style %}{% static 'css/re_list.css'%}{% endblock style %}
+
+{%block content%}
+
+<div class="container mt-3">
+<div class="row">
+{%for object in objects%}
+<div class="col-lg-12 mt-1">
+
+  <a href="{% url 'recipe:detail' object.recipe_id %}" class="card-link">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">{{object}}
+          <span class="tete ml-4">
+            <span>난이도 : {{object.level_nm}},</span>
+            <span>시간 : {{object.cooking_time}},</span>
+            <span>칼로리 : {{object.calorie}}</span>
+          </span>
+        </h4>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">{{object}}</h6> -->
+        <p class="card-text">
+          <dl class="description">
+            <dd>요리 설명  </dd>
+            <dd>{{object.sumry}}</dd>
+          </dl>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  </a>
+  {%endfor%}
+</div>
+
+
+
+
+
+  {% if objects.has_other_pages %}
+    <ul class="pagination mt-5">
+      {% if objects.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ objects.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+      {% endif %}
+      {% for i in objects.paginator.page_range %}
+        {% if objects.number == i %}
+          <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if objects.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ objects.next_page_number }}">&raquo;</a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+
+</div>
+
+</div>
+{%endblock content%}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}home.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle1 %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}
+
+<section class="project">
+
+
+  <header class="project-header">
+    <h2 class="project-title">Our Projects</h2>
+    <p>Motivating others leads to <br>success whereas inspiring others leads to the most grand greatness.</p>
+  </header>
+
+  <section class="project-works ">
+    <h3 class="sr-only" lang="ko">프로젝트 작품들입니다.</h3>
+    <div class="project-work">
+      <a href="#">
+        <img class="project-work-img" src="{% static "assets/img-work-1.jpg" %}" alt>
+        <div class="project-work-contents">
+          <h4>phoenix ui kit</h4>
+          <p>Web-desing, Front-end</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="project-work">
+      <a href="#">
+        <img class="project-work-img" src="{% static "assets/img-work-2.jpg" %}" alt>
+        <div class="project-work-contents">
+          <h4>phoenix ui kit</h4>
+          <p>Web-desing, Front-end</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="project-work">
+      <a href="#">
+        <img class="project-work-img" src="{% static "assets/img-work-3.jpg" %}" alt>
+        <div class="project-work-contents">
+          <h4>phoenix ui kit</h4>
+          <p>Web-desing, Front-end</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="project-work">
+      <a href="#">
+        <img class="project-work-img" src="{% static "assets/img-work-4.jpg" %}" alt>
+        <div class="project-work-contents">
+          <h4>phoenix ui kit</h4>
+          <p>Web-desing, Front-end</p>
+        </div>
+      </a>
+  </section>
+</section>
+
+
+
+<footer>
+<div style="background-color:gray">
+<div class="container" id="footer" >
+    &copy; Team FeFe
+    <p>하이하이</p>
+</div>
+</div>
+</footer>
+{% endblock content %}

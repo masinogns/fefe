@@ -1,0 +1,8 @@
+div.card > h3 {
+  background-color: #87291A;
+  color: white;
+}
+
+div.card > h3 > a {
+  color: white;
+}

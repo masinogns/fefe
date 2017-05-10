@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% block style %}{% static 'food/css/f_list.css'%}{% endblock style %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+    {% for jeju in jeju_list %}
+    <div class="col-sm-12 col-md-6 col-lg-4  mt-3">
+      <div class="card">
+        <div class="card-block">
+          <h5 class="card-title">{{jeju.engn_nm}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{jeju.adres}}</h6>
+          <a href="{% url 'food:detail' jeju.pk  %}" class="card-link">자세히 보기</a>
+
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+    </div>
+
+
+
+{% if jeju_list.has_other_pages %}
+  <ul class="pagination mt-5">
+    {% if jeju_list.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ jeju_list.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+    {% endif %}
+    {% for i in jeju_list.paginator.page_range %}
+      {% if jeju_list.number == i %}
+        <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if jeju_list.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ jeju_list.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</div>
+
+{% endblock content %}

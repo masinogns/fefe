@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>{% block title %}Home{% endblock %}</title>
+
+{% load staticfiles %}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle1 %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle2 %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle3 %}{% endblock %}" />
+<link type="text/javascript" href="{% block sss %}{%endblock%}">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <style media="screen">
+    .content_name{
+      color: rgb(240, 229, 227);
+      font-size: 50px;
+    }
+  </style>
+
+
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <div class="container mx-0 mx-sm-auto">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'home'%}">한민족의 식</a>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="{% url 'food:index' %}">우리 먹거리 체험</a>
+              <a class="nav-item nav-link" href="{% url 'good:index' %}">우리 먹거리 인증 식당</a>
+              <a class="nav-item nav-link" href="{% url 'recipe:index' %}">우리 먹거리 레시피</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- <header class="w-100" style="background-image: url('https://www.chf.or.kr/cm_data/editorImage/201403/20140303152606.gif');">
+        <div class="container h-100 d-flex flex-column justify-content-center">
+          <h2 class="font-weight-thin">강의</h2>
+        </div>
+      </header> -->
+      <header >
+        <div class="container">
+          <div style="height:200px;background-image: url('https://www.chf.or.kr/cm_data/editorImage/201403/20140303152606.gif');" class="d-flex align-items-center">
+            <p class="content_name">{%block content_name%}{%endblock%}</p>
+          </div>
+        </div>
+      </header>
+
+
+
+{% block content %}{% endblock %}
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: false,
+        spaceBetween: 0,
+        mousewheelControl: true,
+
+        // If we need pagination
+        pagination: '.swiper-pagination',
+
+        speed: 600,
+        initialSlide: 0,
+    });
+    </script>
+
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

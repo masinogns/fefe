@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% block style %}{% static 'food/css/f_detail.css'%}{% endblock style %}
+
+{% block content %}
+
+<style media="screen">
+  .red{
+    position: relative;
+    left: 70px;
+  }
+</style>
+
+
+<div class="container mt-3">
+
+  <div class="row">
+  <div class="card red col-lg-4 mt-3">
+    <h3 class="card-header">{{detail.engn_nm}}</h3>
+    <div class="card-block">
+      <h4 class="card-title">{{detail.adres}}</h4>
+      <p class="card-text"><a href="tel:{detail.cttpc}">{{detail.cttpc}}</a></p>
+    </div>
+  </div>
+
+<!-- mt-3" style="width:500px; height:500px;"> -->
+<div class="container mt-3" id="google_map" style="width:500px; height:500px;">
+</div>
+
+
+</div>
+
+  <script>
+      var map;
+      var x={{detail.la}};
+      var y={{detail.lo}};
+
+      function initialize() {
+
+        var mapOptions = { //구글 맵 옵션 설정
+            zoom : 10, //기본 확대율
+            center : new google.maps.LatLng(x, y), // 지도 중앙 위치
+            scrollwheel : false, //마우스 휠로 확대 축소 사용 여부
+            mapTypeControl : false //맵 타입 컨트롤 사용 여부
+        };
+
+        map = new google.maps.Map(document.getElementById('google_map'), mapOptions); //구글 맵을 사용할 타겟
+
+        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'; //마커 이미지 설정
+
+
+        var marker = new google.maps.Marker({ //마커 설정
+            map : map,
+            position : map.getCenter(), //마커 위치
+            icon : image, //마커 이미지
+            title: 'Hello World!'
+        });
+
+        google.maps.event.addDomListener(window, "resize", function() { //리사이즈에 따른 마커 위치
+            var center = map.getCenter();
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(center);
+        });
+
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3iq-k1CE-x-KqtPE0k0tH4Hl0vBWoJ7M&callback=initialize" async defer></script>
+
+
+  <!-- <iframe src="http://www.homejjang.com" width="600" height="600"> -->
+</div>
+
+
+  <div class="container">
+    <div class="row">
+      {% for blog in blogs.items%}
+
+      <div class="col-sm-12 col-md-6 col-lg-12  mt-3">
+        <div class="card">
+          <h3 class="card-header"><a href="{{blog.link}}" target="_blank">{{blog.title}}</a></h3>
+          <div class="card-block">
+
+              <p>{{blog.description}}</p>
+              <a class="card-text" href="{{blog.link}}" target="_blank">{{blog.bloggername}}</a>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+
+      </div>
+  </div>
+
+
+
+{% include "comments.html" %}
+
+
+{% endblock content %}
