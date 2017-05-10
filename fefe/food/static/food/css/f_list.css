@@ -30,3 +30,18 @@ div.card-block > a:hover {
   background: rgb(190, 203, 118);
   border-color: rgb(6, 6, 6);
 }
+
+.page-item {
+  color: rgb(244, 171, 245);
+
+}
+
+ul.pagination > li.active .page-link {
+  background-color: rgb(116, 124, 113);
+  border-color: rgb(116, 124, 113);
+}
+
+
+a.page-link {
+  color: black;
+}

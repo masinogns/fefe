@@ -9,6 +9,7 @@ div#photoZone > div {
     width: 100%;
     height: 100%;
     background: url("https://www.chf.or.kr/cm_data/editorImage/201403/20140303152606.gif") no-repeat;
+    /*background: url("https://firebasestorage.googleapis.com/v0/b/testfirebase-85fba.appspot.com/o/mountain-1615651__340.jpg?alt=media&token=15b8e3ea-b22c-482a-9b24-6da1fe3bf202");*/
     background-size: cover;
     background-position: center center;
 }
